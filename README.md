@@ -9,7 +9,7 @@ build-essential python3 libfreetype6-dev libexpat1-dev
 libxcb-composite0-dev libssl-dev
 ```
 
-Amethyst requires you to have installed one of the graphical backends. I went with Vulkan:
+Amethyst requires you to have one of the graphical backends. I went with Vulkan:
 
 ```
 sudo apt-get install libvulkan-dev mesa-vulkan-drivers
