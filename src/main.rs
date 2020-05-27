@@ -30,12 +30,12 @@ fn main() -> amethyst::Result<()> {
     let app_root = application_root_dir()?;
     let config_path = app_root.join("configs");
 
-    let input_bundle = InputBundle::<StringBindings>::new()
-        .with_bindings_from_file(config_path.join("key_bindings.ron"))?;
-
     let game_data = GameDataBuilder::default()
         .with_bundle(TransformBundle::new())?
-        .with_bundle(input_bundle)?
+        .with_bundle(
+            InputBundle::<StringBindings>::new()
+                .with_bindings_from_file(config_path.join("key_bindings.ron"))?,
+        )?
         .with_bundle(UiBundle::<StringBindings>::new())?
         .with_bundle(
             RenderingBundle::<DefaultBackend>::new()
